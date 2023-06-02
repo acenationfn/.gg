@@ -66,34 +66,34 @@ function goto( link ){
 }
 
 // load fortnite news
-const RSS_URL = `https://rss.app/feeds/wmbrfT7OZPeT0j13.xml`; // google news feed : fortnite
+// const RSS_URL = `https://rss.app/feeds/wmbrfT7OZPeT0j13.xml`; // google news feed : fortnite
 
-$.ajax(RSS_URL, {
-    accepts: {
-        xml: "application/rss+xml"
-    },
-    dataType: "xml",
-    success: function (data) {
-        var no=0;
-        $(data)
-            .find("item")
-            .each(function () {
-                const el = $(this);                    
+// $.ajax(RSS_URL, {
+//     accepts: {
+//         xml: "application/rss+xml"
+//     },
+//     dataType: "xml",
+//     success: function (data) {
+//         var no=0;
+//         $(data)
+//             .find("item")
+//             .each(function () {
+//                 const el = $(this);                    
                
-                const template = `
-                <div class="col-lg-4 col-sm-6">
-                <div class="portfolio-box" onclick="goto('${el.find("link").text()}')">
-                    <img class="img-fluid" src="${el[0].getElementsByTagName('media:content')[0].getAttribute('url')}" alt="." />
-                    <div class="portfolio-box-caption">
-                        <div class="project-category text-white-50"></div>
-                        <div class="project-name">${el.find("title").text()}</div>
-                    </div>
-                </div>
-            </div>`;
-                if(no<10 && no!=4){
-                    document.getElementById('news_content').insertAdjacentHTML("beforeend", template);
-                }
-                no=no+1;
-            });
-    }
-});
+//                 const template = `
+//                 <div class="col-lg-4 col-sm-6">
+//                 <div class="portfolio-box" onclick="goto('${el.find("link").text()}')">
+//                     <img class="img-fluid" src="${el[0].getElementsByTagName('media:content')[0].getAttribute('url')}" alt="." />
+//                     <div class="portfolio-box-caption">
+//                         <div class="project-category text-white-50"></div>
+//                         <div class="project-name">${el.find("title").text()}</div>
+//                     </div>
+//                 </div>
+//             </div>`;
+//                 if(no<10 && no!=4){
+//                     document.getElementById('news_content').insertAdjacentHTML("beforeend", template);
+//                 }
+//                 no=no+1;
+//             });
+//     }
+// });
