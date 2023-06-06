@@ -11032,3 +11032,62 @@ header.masthead h1, header.masthead .h1 {
 #news .container-fluid .portfolio-box:hover .portfolio-box-caption, #news .container-sm .portfolio-box:hover .portfolio-box-caption, #news .container-md .portfolio-box:hover .portfolio-box-caption, #news .container-lg .portfolio-box:hover .portfolio-box-caption, #news .container-xl .portfolio-box:hover .portfolio-box-caption, #news .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
+
+/* loading animation */
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+body {
+    margin: 0px;
+}
+
+.maskbg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    opacity: 1;
+
+}
+.maskbg-transition.maskbg-hidden {
+    display: block;
+    opacity: 0;
+}
+
+.maskbg-transition {        
+    transition: opacity 1s ease;
+}
+
+.maskbg-hidden {
+    display: none;
+}
+
+
+
+
+#lmask {
+    position: absolute;
+    margin: auto;
+    width: 100vw;
+    height: 80pt;
+    top: 0;
+    bottom: 0;
+    filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    color: black;
+    font-family: "Raleway", sans-serif;
+    font-size: 80pt;
+    text-align: center;
+    user-select: none;
+}
