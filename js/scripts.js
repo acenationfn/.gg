@@ -116,7 +116,7 @@ const texts = [
     "NATION"
 ];
 
-let totalTime = Math.random() * 8 + 3;
+let totalTime = Math.random() * 9 + 4;
 const morphTime = totalTime / 2;
 const cooldownTime = 0.25;
 
