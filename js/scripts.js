@@ -231,3 +231,37 @@ elts.maskBG.addEventListener('transitionend', function () {
     elts.maskBG.classList.remove('maskbg-transition');
     enableScroll();
 }, false);
+
+
+// ================
+// rating panel
+// ================
+
+function close_panel(){
+    $('#myModal').modal().hide() ;
+}
+
+function rating_panel(){
+    var target = document.getElementById('rating-submit') ;
+    target.innerHTML= "<span>Thanks for your reply</span>" +  target.innerHTML;
+    var b = document.getElementById('panel_btn') ;
+    b.disabled = true;
+    setTimeout(close_panel, 3_000);
+}
+function triggerStar() {
+    //var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    //myModal.modal({'backdrop':false})
+    $('#myModal').modal({'backdrop':'static'}).show();
+    //myModal.show();
+
+}
+
+function trigger_rating_panel(){
+    //console.log("-->"+ window.scrollY) ;
+    if( window.scrollY>1800){
+        setTimeout(triggerStar,1_000) ;
+        return ;
+    }
+    setTimeout(trigger_rating_panel,500) ;
+}
+trigger_rating_panel() ; // trigger 
