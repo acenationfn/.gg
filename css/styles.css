@@ -11202,3 +11202,8 @@ body {
   transform: rotate(0.2turn);
   transition-delay: calc(0.1 * attr(data-idx integer));
 }
+
+@font-face {
+  font-family: myTitleFont;
+  src: url('Anton-Regular.ttf');
+}
