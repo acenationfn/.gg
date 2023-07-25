@@ -4,10 +4,12 @@
     margin:0 auto;
     width:275px;
     border-radius:30px;
-    border:1px solid #dcdcdc;
+    border:2px solid #dcdcdc;
     position: fixed;
     left: 40px;
     top: 160px;
+    background-color: #212529b5;
+    z-index: 99;
   }
   .bar:hover{
     box-shadow: 1px 1px 8px 1px #dcdcdc;

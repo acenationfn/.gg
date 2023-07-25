@@ -70,10 +70,10 @@
                 <div class="profile-header-cover__overlay"></div>
             </div>
             <div class="bar">
-                <input class="searchbar" type="text" title="Search" placeholder="search player stats">
-                <a href="#"> <img class="searchicon"
+                <input class="searchbar"  id="search_target" type="text" title="Search" placeholder="search player stats">
+                <span onclick="search();"> <img class="searchicon"
                         src="https://cdn4.iconfinder.com/data/icons/internet-security-flat-2/32/Internet_Security_search_zoom_Magnifier_seo_find-64.png"
-                        title="Search"></a>
+                        title="Search"></span>
             </div>
             <div class="profile-header__container">
                 <div class="profile-header-avatar"><img src="./css/230D684_small.png" alt="&#39;s Avatar"
@@ -120,6 +120,14 @@
                                 </svg> 169h 53m Play Time </div>
                         </div>
                     </header>
+                    <div class="alert alert-danger" role="alert">
+                        <h3>Profile is Private.</h3><br>
+                        This player has changed their in-game settings to make their profile private 😦
+                      </div>
+                      <div class="alert alert-danger" role="alert">
+                        <h3>404 Not Found.</h3><br>
+                        We are unable to find your profile.Please make sure your spelling is correct.
+                      </div>
                     <div class="trn-card__content trn-card__content--with-padding">
                         <div class="profile-overview__featured-stats">
                             <div class="profile-stat profile-stat--giant profile-stat--featured">
@@ -322,7 +330,7 @@
 
     <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
     <script>
-        function query() {
+        async function query(){
             const url = 'https://fortnite-api.com/v2/stats/br/v2/781ae9d1a0ac4574b5cbc62a650f2355';
 
             const response = await fetch(url, {
@@ -336,8 +344,8 @@
             console.log(text);
         }
 
-        function qname() {
-            const url = 'https://fortnite-api.com/v2/stats/br/v2?name=Veno';
+        async function qname( target ){
+            const url = 'https://fortnite-api.com/v2/stats/br/v2?name='+target;
 
             const response = await fetch(url, {
                 headers: {
@@ -348,6 +356,12 @@
             const text = await response.text();
 
             console.log(text);
+        }
+
+        function search(){
+            var target = document.getElementById('search_target') ;
+            console.log( target.value ) ;
+            qname(target.value) ;
         }
 
         
