@@ -71,7 +71,7 @@
             </div>
             <div class="bar">
                 <input class="searchbar"  id="search_target" type="text" title="Search" placeholder="search player stats">
-                <span onclick="search();"> <img class="searchicon"
+                <span id="search_target_btn" onclick="search();"> <img class="searchicon"
                         src="https://cdn4.iconfinder.com/data/icons/internet-security-flat-2/32/Internet_Security_search_zoom_Magnifier_seo_find-64.png"
                         title="Search"></span>
             </div>
@@ -317,6 +317,11 @@
         }
 
         reset();
+        $("#search_target").keypress(function (event) {
+            if (event.keyCode === 13) {
+                $("#search_target_btn").click();
+            }
+        });
     </script>
 </body>
 
